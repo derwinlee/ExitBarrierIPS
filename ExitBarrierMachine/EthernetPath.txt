@@ -1,0 +1,54 @@
+  /*  char inChar;
+    String inCharArray = "";
+    char outBuf[128];
+    Serial.print(F("connecting..."));
+    Serial.print(SerialNo);
+    if (client.connect(ipBuf, thisPort) == 1)
+    {
+      Serial.println(F("connected"));
+      client.print("GET /postime/Test1.php?");
+      client.print("TicketNo=");
+      client.print(SerialNo.substring(0, 13));
+      client.print(" HTTP/1.1");
+      client.println(outBuf);
+      sprintf(outBuf, "Host: %s", serverName);
+      client.println(outBuf);
+      client.println(F("Connection: close\r\n"));
+    }
+    else
+    {
+      Serial.println(F("failed"));
+      return 0;
+    }
+    int connectLoop = 0;
+    int i = 0;
+    while (client.connected())
+    {
+      while (client.available())
+      {
+        inChar = client.read();
+        Serial.write(inChar);
+        inCharArray += inChar;
+        connectLoop = 0;
+      }
+      connectLoop++;
+      if (connectLoop > 10000)
+      {
+        Serial.println();
+        Serial.println(F("Timeout"));
+        client.stop();
+      }
+      delay(1);
+    }
+    Serial.println();
+    if (inCharArray.indexOf("EMPTY or ERROR") > 0)
+    {
+      ServerResult = 0;
+    }
+    else
+    {
+      ServerResult = 1;
+    }
+    Serial.println(F("disconnecting."));
+    client.stop();
+    return 1;*/
